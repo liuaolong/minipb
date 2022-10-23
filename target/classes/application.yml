@@ -4,17 +4,17 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://124.71.222.202:3306/program
+    url: jdbc:mysql://124.71.222.202:3306/program?useUnicode=true&characterEncoding=UTF-8
     username: root
     password: root
     type: com.alibaba.druid.pool.DruidDataSource
 
     #上传文件总的最大值
-    servlet:
-      multipart:
-        max-request-size: 1000MB
+  servlet:
+    multipart:
+      max-request-size: 10000MB
         #上传文件的最大值
-        max-file-size: 1000MB
+      max-file-size: 10000MB
 
 #配置mapper xml文件的路径
 mybatis-plus:
@@ -26,6 +26,6 @@ mybatis-plus:
 #上传物理路径
 file:
   upload:
-    path: D:/upfiles/
+    path: H:/TEMP/
     #虚拟路径
     relative: files/**

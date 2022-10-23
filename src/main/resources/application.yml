@@ -4,7 +4,7 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://124.71.222.202:3306/program
+    url: jdbc:mysql://124.71.222.202:3306/program?useUnicode=true&characterEncoding=UTF-8
     username: root
     password: root
     type: com.alibaba.druid.pool.DruidDataSource
