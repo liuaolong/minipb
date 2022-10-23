@@ -6,10 +6,7 @@ import com.zrent.model.Pages;
 import com.zrent.model.Response;
 import com.zrent.service.ChapterService;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
@@ -93,7 +90,7 @@ public class ChapterController {
      */
 
     @RequestMapping(value = "/upload",method = RequestMethod.POST)
-    public Response upload(MultipartFile video) throws IOException {
+    public Response upload(@RequestParam("file") MultipartFile video) throws IOException {
         //获取文件原名
         String fileName =video.getOriginalFilename();
         //创建要上传的文件对象
